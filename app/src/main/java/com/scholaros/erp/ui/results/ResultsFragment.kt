@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.scholaros.erp.data.local.SessionManager
-import com.scholaros.erp.data.model.ExamBasic
+import com.scholaros.erp.data.model.Exam
 import com.scholaros.erp.data.model.SubjectResult
 import com.scholaros.erp.databinding.FragmentResultsBinding
 import com.scholaros.erp.databinding.ItemResultBinding
@@ -24,7 +24,7 @@ class ResultsFragment : Fragment() {
     private var _binding: FragmentResultsBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: ResultsViewModel
-    private var exams: List<ExamBasic> = emptyList()
+    private var exams: List<Exam> = emptyList()
 
     private val adapter = object : ListAdapter<SubjectResult, RecyclerView.ViewHolder>(
         object : DiffUtil.ItemCallback<SubjectResult>() {
@@ -61,8 +61,8 @@ class ResultsFragment : Fragment() {
         viewModel.exams.observe(viewLifecycleOwner) { result ->
             if (result is Resource.Success) {
                 exams = result.data?.exams ?: emptyList()
-                val names = exams.map { it.name }
-                val dropdownAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, names)
+                val names: List<String> = exams.map { it.name }
+                val dropdownAdapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, names)
                 binding.spinnerExam.setAdapter(dropdownAdapter)
                 binding.spinnerExam.setOnItemClickListener { _, _, pos, _ ->
                     viewModel.loadResult(exams[pos].id)

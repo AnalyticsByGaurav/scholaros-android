@@ -11,6 +11,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bumptech.glide.Glide
@@ -74,7 +75,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             showLogoutDialog()
             return true
         }
-        val handled = item.onNavDestinationSelected(navController)
+        val handled = NavigationUI.onNavDestinationSelected(item, navController)
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return handled
     }
