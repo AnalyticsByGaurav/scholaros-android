@@ -1,5 +1,6 @@
 package com.scholaros.erp.ui.main
 
+import androidx.navigation.ui.NavigationUI
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -74,7 +75,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             showLogoutDialog()
             return true
         }
-        val handled = item.onNavDestinationSelected(navController)
+        val handled = NavigationUI.onNavDestinationSelected(item, navController)
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return handled
     }
