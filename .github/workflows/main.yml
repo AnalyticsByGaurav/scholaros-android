@@ -20,7 +20,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - uses: android-actions/setup-android@v3
+      - name: Install Gradle 8.4
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.4-bin.zip
+          unzip -q gradle-8.4-bin.zip
+          echo "$GITHUB_WORKSPACE/android-app/gradle-8.4/bin" >> $GITHUB_PATH
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
 
       - name: Create google-services.json
         run: |
@@ -28,11 +35,8 @@ jobs:
           {"project_info":{"project_number":"000000000000","project_id":"scholaros-placeholder","storage_bucket":"scholaros-placeholder.appspot.com"},"client":[{"client_info":{"mobilesdk_app_id":"1:000000000000:android:0000000000000000","android_client_info":{"package_name":"com.scholaros.erp"}},"oauth_client":[],"api_key":[{"current_key":"AIzaSyPlaceholderKeyForBuildOnly00000000000"}],"services":{"appinvite_service":{"other_platform_oauth_client":[]}}}],"configuration_version":"1"}
           EOF
 
-      - name: Make gradlew executable
-        run: chmod +x gradlew
-
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
