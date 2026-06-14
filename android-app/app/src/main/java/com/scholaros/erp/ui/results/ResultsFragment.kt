@@ -24,7 +24,7 @@ class ResultsFragment : Fragment() {
     private var _binding: FragmentResultsBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: ResultsViewModel
-    private var exams: List<ExamBasic> = emptyList()
+    private var exams: List<Exam> = emptyList()
 
     private val adapter = object : ListAdapter<SubjectResult, RecyclerView.ViewHolder>(
         object : DiffUtil.ItemCallback<SubjectResult>() {
