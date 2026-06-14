@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="@string/nav_dashboard" />
+        <item
+            android:id="@+id/nav_notices"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="@string/nav_notices" />
+        <item
+            android:id="@+id/nav_attendance"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="@string/nav_attendance" />
+        <item
+            android:id="@+id/nav_homework"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/nav_homework" />
+        <item
+            android:id="@+id/nav_fees"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="@string/nav_fees" />
+        <item
+            android:id="@+id/nav_results"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="@string/nav_results" />
+        <item
+            android:id="@+id/nav_timetable"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            android:title="@string/nav_timetable" />
+        <item
+            android:id="@+id/nav_materials"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="@string/nav_materials" />
+        <item
+            android:id="@+id/nav_leave"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/nav_leave" />
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="@string/nav_calendar" />
+        <item
+            android:id="@+id/nav_complaints"
+            android:icon="@android:drawable/ic_menu_report_image"
+            android:title="@string/nav_complaints" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="@string/nav_profile" />
+    </group>
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/action_logout"
+                android:icon="@android:drawable/ic_lock_power_off"
+                android:title="@string/logout" />
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_dashboard">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.scholaros.erp.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_notices"
+        android:name="com.scholaros.erp.ui.notices.NoticesFragment"
+        android:label="Notices"
+        tools:layout="@layout/fragment_notices" />
+
+    <fragment
+        android:id="@+id/nav_attendance"
+        android:name="com.scholaros.erp.ui.attendance.AttendanceFragment"
+        android:label="Attendance"
+        tools:layout="@layout/fragment_attendance" />
+
+    <fragment
+        android:id="@+id/nav_homework"
+        android:name="com.scholaros.erp.ui.homework.HomeworkFragment"
+        android:label="Homework"
+        tools:layout="@layout/fragment_homework" />
+
+    <fragment
+        android:id="@+id/nav_fees"
+        android:name="com.scholaros.erp.ui.fees.FeesFragment"
+        android:label="Fees"
+        tools:layout="@layout/fragment_fees" />
+
+    <fragment
+        android:id="@+id/nav_results"
+        android:name="com.scholaros.erp.ui.results.ResultsFragment"
+        android:label="Results"
+        tools:layout="@layout/fragment_results" />
+
+    <fragment
+        android:id="@+id/nav_timetable"
+        android:name="com.scholaros.erp.ui.timetable.TimetableFragment"
+        android:label="Timetable"
+        tools:layout="@layout/fragment_timetable" />
+
+    <fragment
+        android:id="@+id/nav_materials"
+        android:name="com.scholaros.erp.ui.materials.MaterialsFragment"
+        android:label="Study Materials"
+        tools:layout="@layout/fragment_materials" />
+
+    <fragment
+        android:id="@+id/nav_leave"
+        android:name="com.scholaros.erp.ui.leave.LeaveFragment"
+        android:label="Leave"
+        tools:layout="@layout/fragment_leave" />
+
+    <fragment
+        android:id="@+id/nav_calendar"
+        android:name="com.scholaros.erp.ui.calendar.CalendarFragment"
+        android:label="Calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+    <fragment
+        android:id="@+id/nav_complaints"
+        android:name="com.scholaros.erp.ui.complaints.ComplaintsFragment"
+        android:label="Complaints"
+        tools:layout="@layout/fragment_complaints" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.scholaros.erp.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
